@@ -32,25 +32,25 @@ const mainEl = document.getElementById("main")
 let html = ""
 for (let i = 0; i < posts.length; i++) {
     html += `
-        <article id="post-0" class="post">
+        <article id="post-${i}" class="post">
         <header class="post-header">
-            <img class="avatar" src="images/avatar-vangogh.jpg" alt="Avatar of Vincent Van Gogh">
+            <img class="avatar" src="${posts[i].avatar}" alt="Avatar of ${posts[i].name}">
             <div class="user-info">
-                <h2 id="name-0" class="accent-text">Vincent van Gogh</h2>
-                <p id="location-0" class="small-text">Zudert, Netherlands</p>
+                <h2 id="name-${i}" class="accent-text">${posts[i].name}</h2>
+                <p id="location-${i}" class="small-text">${posts[i].location}</p>
             </div>
         </header>
         <figure>
-            <img class="post-image" src="images/post-vangogh.jpg" alt="Self-portrait of Vincent van Gogh in oil on canvas from September 1889.">
+            <img class="post-image" src="${posts[i].post}" alt="Self-portrait of ${posts[i].name} in oil on canvas from September 1889.">
             <div class="post-image-btn-info">
                 <div class="btn-container">
-                    <button id="heart-btn-0" class="icon-btn" aria-label="Like image"><img class="btn-img" src="images/icon-heart.png" alt=""></button>
-                    <button id="comment-btn-0" class="icon-btn" aria-label="Add a comment"><img class="btn-img" src="images/icon-comment.png" alt=""></button>
-                    <button id="dm-btn-0" class="icon-btn" aria-label="Send a message"><img class="btn-img" src="images/icon-dm.png" alt=""></button>
+                    <button id="heart-btn-${i}" class="icon-btn" aria-label="Like image"><img class="btn-img" src="images/icon-heart.png" alt=""></button>
+                    <button id="comment-btn-${i}" class="icon-btn" aria-label="Add a comment"><img class="btn-img" src="images/icon-comment.png" alt=""></button>
+                    <button id="dm-btn-${i}" class="icon-btn" aria-label="Send a message"><img class="btn-img" src="images/icon-dm.png" alt=""></button>
                 </div>
                 <figcaption class="post-caption">
-                    <p id="likes-text-0" class="accent-text">21,492 likes</p>
-                    <p id="caption-text-0" class="username"><span id="username-0" class="accent-text"><a href="#">vincey1853</a></span> just took a few mushrooms lol</p>
+                    <p id="likes-text-${i}" class="accent-text">${posts[i].likes === 1 ? posts[i].likes + ' like' : posts[i].likes + ' likes'}</p>
+                    <p id="caption-text-${i}" class="username"><span id="username-${i}" class="accent-text"><a href="#">${posts[i].username}</a></span> ${posts[i].comment}</p>
                 </figcaption>
             </div>
         </figure>
