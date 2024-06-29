@@ -2,11 +2,7 @@
 
 *,
 *::before,
-*::after {
-    margin: 0;
-    padding: 0;
-}
-
+*::after,
 html,
 body {
     margin: 0;
@@ -16,56 +12,62 @@ body {
 body {
     font-family: "Source Sans 3", sans-serif;
     font-weight: 400;
-    background-color: #c6c6c6;
+    background-color: #C6C6C6;
 }
 
-/* App container styles */
+/* App container and article styles */
 
 .container {
     max-width: 375px;
     margin: 0 auto;
     padding: 0;
     color: black;
-    background-color: white;
+    background-color: #ededed;
+}
+
+.hero,
+.post {
+    background-color: #ffffff;
 }
 
 /* App header styles */
 
-.app-header {
-    border-bottom: 2px solid #c6c6c6;
+.hero {
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.hero-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 10px;
-}
-
-h1 {
-    margin: 0;
-    padding: 0;
+    padding: 6px 12px;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 
 .logo {
     width: 127px;
     height: auto;
-    margin: 0;
-    padding: 0;
 }
 
 /* Posts */
 
-figure {
-    margin: 0;
+.post {
+    display: flex;
+    flex-direction: column;
 }
 
 .post-header {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+.user-info {
+    margin: 6.5px;
 }
 
 .avatar {
@@ -74,26 +76,40 @@ figure {
     height: 34px;
 }
 
-
-.user-info {
-    margin: 0;
-}
-
 .post-image {
     width: 100%;
     height: auto;
 }
 
+.post-image-btn-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.post-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 5px;
+}
 /* Post interactions */
 
 .btn-container {
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
 }
 
 .icon-btn {
     background: none;
     border: none;
-    padding: 10px;
     cursor: pointer;
 }
 
@@ -114,4 +130,9 @@ article {
 
 .small-text {
     font-size: 12px;
+}
+
+.username a {
+    color: #000000;
+    text-decoration: none;
 }
