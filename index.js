@@ -5,6 +5,7 @@ const posts = [
         location: "Zundert, Netherlands",
         avatar: "images/avatar-vangogh.jpg",
         post: "images/post-vangogh.jpg",
+        desc: "Self-portrait in oil on canvas from September 1889.",
         comment: "just took a few mushrooms lol",
         likes: 21
     },
@@ -14,6 +15,7 @@ const posts = [
         location: "Ornans, France",
         avatar: "images/avatar-courbet.jpg",
         post: "images/post-courbet.jpg",
+        desc: "The Desperate Man, an oil-on-canvas self-portrait produced in 1843 to 1845.",
         comment: "i'm feelin a bit stressed tbh",
         likes: 4
     },
@@ -23,6 +25,7 @@ const posts = [
         location: "Paris, France",
         avatar: "images/avatar-ducreux.jpg",
         post: "images/post-ducreux.jpg",
+        desc: "Self Portrait of the Artist in the Guise of a Mockingbird from 1793.",
         comment: "gm friends! which coin are YOU stacking up today?? post below and WAGMI!",
         likes: 152
     }
@@ -30,6 +33,7 @@ const posts = [
 
 const mainEl = document.getElementById("main")
 let html = ""
+
 for (let i = 0; i < posts.length; i++) {
     html += `
         <article id="post-${i}" class="post">
@@ -41,7 +45,7 @@ for (let i = 0; i < posts.length; i++) {
             </div>
         </header>
         <figure>
-            <img class="post-image" src="${posts[i].post}" alt="Self-portrait of ${posts[i].name} in oil on canvas from September 1889.">
+            <img class="post-image" src="${posts[i].post}" alt="${posts[i].desc}>
             <div class="post-image-btn-info">
                 <div class="btn-container">
                     <button id="heart-btn-${i}" class="icon-btn" aria-label="Like image"><img class="btn-img" src="images/icon-heart.png" alt=""></button>
@@ -56,6 +60,9 @@ for (let i = 0; i < posts.length; i++) {
         </figure>
     </article>
     `
+    if (i < posts.length - 1) {
+        html += `<div class="post-separator"></div>`
+    }
 }
 
 mainEl.innerHTML = html
