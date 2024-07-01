@@ -31,6 +31,8 @@ const posts = [
     }
 ]
 
+// generate post content
+
 const mainEl = document.getElementById("main")
 let html = ""
 
@@ -87,3 +89,11 @@ function incrementLikes(i) {
     posts[i].likes += 1
     currentText.textContent = `${posts[i].likes === 1 ? posts[i].likes + ' like' : posts[i].likes + ' likes'}`
 }
+
+/* To investigate later:
+    1. When should all the content be generated? At page load?
+    2. What happens when a new post is added? Does everything have to be loaded afresh?
+    3. Should there be a "Load more" type option for when a certain number of posts are displayed?
+    4. It might be worth setting this up to bring in data from Firebase?
+    5. Might be nice to add more functionality, such as Like buttons that increment only once (and then decrement), the ability to add (and optionally view) comments?
+*/
