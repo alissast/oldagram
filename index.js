@@ -45,7 +45,7 @@ for (let i = 0; i < posts.length; i++) {
             </div>
         </header>
         <figure>
-            <img class="post-image" src="${posts[i].post}" alt="${posts[i].desc}>
+            <img class="post-image" id="post-image-${i}" src="${posts[i].post}" alt="${posts[i].desc}>
             <div class="post-image-btn-info">
                 <div class="btn-container">
                     <button id="like-btn-${i}" class="icon-btn" aria-label="Like image"><img class="btn-img" src="images/icon-heart.png" alt=""></button>
@@ -70,11 +70,17 @@ mainEl.innerHTML = html
 // add event listeners to buttons
 
 for (let i = 0; i < posts.length; i++) {
-    let currentBtn = document.getElementById(`like-btn-${i}`)
-    currentBtn.addEventListener("click", function() {
+    let currentLikeBtn = document.getElementById(`like-btn-${i}`)
+    let currentPostImage = document.getElementById(`post-image-${i}`)
+
+    currentLikeBtn.addEventListener("click", function() {
        incrementLikes(i)
-    }    
-)}
+    })
+
+    currentPostImage.addEventListener("click", function() {
+        incrementLikes(i)
+    })
+}
 
 function incrementLikes(i) {
     let currentText = document.getElementById(`likes-text-${i}`)

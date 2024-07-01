@@ -79,6 +79,7 @@ nav ul {
 .post-image {
     width: 100%;
     height: auto;
+    cursor: pointer;
 }
 
 .post-image-btn-info {
