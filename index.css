@@ -96,7 +96,8 @@ nav ul {
     align-items: flex-start;
     justify-content: space-between;
     gap: 10px;
-    margin: 5px 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
 }
 
 .post-separator {
@@ -111,13 +112,18 @@ nav ul {
     align-items: center;
     justify-content: flex-start;
     gap: 15px;
-    margin: 5px;
+    margin: 10px 10px;
 }
 
 .icon-btn {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.icon-btn:hover,
+.icon-btn:focus {
+    background-color: blue;
 }
 
 .btn-img {

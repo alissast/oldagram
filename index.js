@@ -48,7 +48,7 @@ for (let i = 0; i < posts.length; i++) {
             <img class="post-image" src="${posts[i].post}" alt="${posts[i].desc}>
             <div class="post-image-btn-info">
                 <div class="btn-container">
-                    <button id="heart-btn-${i}" class="icon-btn" aria-label="Like image"><img class="btn-img" src="images/icon-heart.png" alt=""></button>
+                    <button id="like-btn-${i}" class="icon-btn" aria-label="Like image"><img class="btn-img" src="images/icon-heart.png" alt=""></button>
                     <button id="comment-btn-${i}" class="icon-btn" aria-label="Add a comment"><img class="btn-img" src="images/icon-comment.png" alt=""></button>
                     <button id="dm-btn-${i}" class="icon-btn" aria-label="Send a message"><img class="btn-img" src="images/icon-dm.png" alt=""></button>
                 </div>
@@ -66,3 +66,18 @@ for (let i = 0; i < posts.length; i++) {
 }
 
 mainEl.innerHTML = html
+
+// add event listeners to buttons
+
+for (let i = 0; i < posts.length; i++) {
+    let currentBtn = document.getElementById(`like-btn-${i}`)
+    currentBtn.addEventListener("click", function() {
+       incrementLikes(i)
+    }    
+)}
+
+function incrementLikes(i) {
+    let currentText = document.getElementById(`likes-text-${i}`)
+    posts[i].likes += 1
+    currentText.textContent = `${posts[i].likes === 1 ? posts[i].likes + ' like' : posts[i].likes + ' likes'}`
+}
